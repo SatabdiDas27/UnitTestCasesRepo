@@ -2,11 +2,11 @@
 //  AppDelegate.m
 //  UnitTestCaseUsingXCT
 //
-//  Created by Satish Kumar17 on 10/20/14.
-//  Copyright (c) 2014 Satish Kumar17. All rights reserved.
+
 //
 
 #import "AppDelegate.h"
+#import "FirstViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,9 +17,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.landingView = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
+//    self.navController = [[UINavigationController alloc]initWithRootViewController:self.landingView];
+//
+//    self.window.rootViewController = self.navController;
+//    [self.window makeKeyAndVisible];
+    
+    [self loadTheMainView];
+
     return YES;
 }
+-(void) loadTheMainView{
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.landingView = [[FirstViewController alloc]initWithNibName:@"FirstViewController" bundle:nil];
+    self.navController = [[UINavigationController alloc]initWithRootViewController:self.landingView];
+    
+    self.window.rootViewController = self.navController;
+    [self.window makeKeyAndVisible];
 
+    
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

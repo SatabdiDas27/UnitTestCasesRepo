@@ -2,16 +2,20 @@
 //  AppDelegate.h
 //  UnitTestCaseUsingXCT
 //
-//  Created by Satish Kumar17 on 10/20/14.
-//  Copyright (c) 2014 Satish Kumar17. All rights reserved.
+
 //
 
 #import <UIKit/UIKit.h>
-
+@class  FirstViewController;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    FirstViewController *_landingView;
 
+}
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) FirstViewController *landingView;
+@property (strong, nonatomic)UINavigationController *navController;
 
-
+-(void) loadTheMainView;
 @end
 
